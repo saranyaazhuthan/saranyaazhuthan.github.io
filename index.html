@@ -1,136 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>About Me - Saranya ATV</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Material UI Card</title>
+  <!-- Add Material-UI CSS link -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <style>
-    /* Customize your page styles here */
     body {
-      background-color: #f5f5f5;
-      color: #333333;
-      font-family: Roboto, Arial, sans-serif;
+      font-family: Roboto, sans-serif;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
     }
-    .navbar {
-      background-color: #ffffff;
-      padding: 10px;
-    }
-    .navbar-item {
-      cursor: pointer;
-      color: #333333;
-      text-decoration: none;
-      margin-right: 10px;
-      transition: color 0.3s ease;
-    }
-    .navbar-item.active {
-      color: #0080ff; /* Change to your desired active color */
-      font-weight: bold; /* Make the active link bold */
-    }
-    .navbar-item:hover {
-      color: #666666;
-    }
+
     .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-    h1 {
-      color: #333333;
-      margin-top: 20px;
-    }
-    .subtitle {
-      color: #666666;
-      margin-bottom: 30px;
-    }
-    .profile-card {
       display: flex;
-      align-items: center;
       justify-content: center;
-      flex-direction: column;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .profile-image {
-      max-width: 150px;
-      border-radius: 50%;
-    }
-    .contact-info {
-      margin-top: 20px;
-    }
-    .contact-info li {
-      margin-bottom: 10px;
-      display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 50px; /* Adjust as needed */
     }
-    .contact-info li svg {
-      margin-right: 10px;
-      width: 20px;
-      height: 20px;
+
+    .card {
+      flex-basis: 400px;
+      min-height: 400px; /* Set a minimum height for the card */
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      display: flex; /* Added */
+      flex-direction: column; /* Added */
+      align-items: center; /* Added */
+      position: relative; /* Added for positioning arrows */
     }
-    .contact-info li a {
-      color: #888888;
-      text-decoration: none;
-      transition: color 0.3s ease;
+
+    .profile-picture {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: block;
     }
-    .contact-info li a:hover {
-      color: #333333;
+
+    .title {
+      text-align: center;
     }
-    /* Responsive layout */
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 10px;
-      }
-      .profile-card {
-        padding: 15px;
-      }
-      .profile-image {
-        max-width: 120px;
+
+    .subtitle {
+      text-align: center;
+      color: #666;
+    }
+
+    .content {
+      text-align: center; /* Updated */
+      margin-top: 20px; /* Add some space between the title and content */
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      color: #ccc; /* Dim the arrow icon by default */
+    }
+
+    .arrow:hover {
+      color: #555; /* Brighten the arrow icon on hover */
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .card {
+        flex-basis: calc(100% - 20px);
+        margin: 10px;
       }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="container">
-      <a class="navbar-item" href="index.html">About Me</a>
-      <a class="navbar-item active" href="contact.html">Contact Information</a>
+  <div class="container">
+    <div class="card" id="about-me">
+      <!-- About Me Card Content -->
+      <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-picture">
+      <h2 class="title">Saranya ATV</h2>
+      <h3 class="subtitle">Certified Medical Coder</h3>
+      <p class="content">
+        Hello, I'm Saranya ATV, a Bachelor of Arts graduate in Malayalam and a certified medical coder from Kasaragod, Kerala, India.
+        I am driven by the desire to excel in my career in medical coding.
+        I have a deep passion for fashion and movies. In my free time, you'll often find me engrossed in books, watching movies, listening to music, singing, dancing, and writing.
+      </p>
+      <span class="arrow arrow-left" onclick="showPreviousCard()">
+        <i class="fas fa-arrow-left"></i>
+      </span>
+      <span class="arrow arrow-right" onclick="showNextCard()">
+        <i class="fas fa-arrow-right"></i>
+      </span>
     </div>
-  </nav>
-
-  <section class="section">
-    <div class="container">
-      <div class="profile-card">
-        <img class="profile-image" src="https://via.placeholder.com/150" alt="Profile Picture">
-        <h1 class="title">Saranya ATV</h1>
-        <h2 class="subtitle">Certified Medical Coder</h2>
-        <p>
-          Hello,</br>I'm Saranya ATV, a Bachelor of Arts graduate in Malayalam and a certified medical coder from Kasaragod, Kerala, India.
-          I am driven by the desire to excel in my career in medical coding.
-          I have a deep passion for fashion and movies. In my free time, you'll often find me engrossed in books, watching movies, listening to music, singing, dancing, and writing.
-        </p>
-      </div>
+    <div class="card" id="contact" style="display: none;">
+      <!-- Contact Card Content -->
+      <h2 class="title">Contact</h2>
+      <p class="content">
+        Email: <a href="mailto:saranyaazhuthan@gmail.com">saranyaazhuthan@gmail.com</a>
+        <br>
+        LinkedIn: <a href="https://www.linkedin.com/in/saranyaatv">linkedin.com/in/saranyaatv</a>
+      </p>
+      <span class="arrow arrow-left" onclick="showPreviousCard()">
+        <i class="fas fa-arrow-left"></i>
+      </span>
+      <span class="arrow arrow-right" onclick="showNextCard()">
+        <i class="fas fa-arrow-right"></i>
+      </span>
     </div>
-  </section>
+  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-lj5Y58Z82e/jyZtW15DYMnZGp7G58XB22G7ARfYQa5unMQ2aKoyewJC/GeWcZcrDIXlurAuJU16EdUuEG4Sd0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Add Material-UI JavaScript link -->
+  <script src="https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js"></script>
   <script>
-    // Highlight active navbar-item
-    const currentLocation = window.location.pathname.split('/').slice(-1)[0];
-    const navbarItems = document.querySelectorAll('.navbar-item');
-    var a = 0
-    navbarItems.forEach(item => {
-      a += 1;
-      if (item.getAttribute('href') === currentLocation) {
-        item.classList.add('active');
-      } else if (currentLocation === '') {
-        if (a == 1) {
-          item.classList.add('active');
+    // Get all cards
+    const cards = document.querySelectorAll('.card');
+    let currentCardIndex = 0;
+
+    // Show the initial card (About Me)
+    showCard(currentCardIndex);
+
+    // Function to navigate to the previous card
+    function showPreviousCard() {
+      currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+      showCard(currentCardIndex);
+    }
+
+    // Function to navigate to the next card
+    function showNextCard() {
+      currentCardIndex = (currentCardIndex + 1) % cards.length;
+      showCard(currentCardIndex);
+    }
+
+    // Function to display the selected card and hide others
+    function showCard(index) {
+      cards.forEach((card, i) => {
+        if (i === index) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
         }
-      } else {
-        item.classList.remove('active');
+      });
+
+      // Hide or show arrow keys based on current card index
+      const arrowLeft = document.querySelector('.arrow-left');
+      const arrowRight = document.querySelector('.arrow-right');
+      arrowLeft.style.display = index === 0 ? 'none' : 'block';
+      arrowRight.style.display = index === cards.length - 1 ? 'none' : 'block';
+    }
+
+    // Handle arrow key navigation
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') {
+        currentCardIndex = (currentCardIndex + 1) % cards.length;
+        showCard(currentCardIndex);
+      } else if (event.key === 'ArrowLeft') {
+        currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+        showCard(currentCardIndex);
       }
     });
   </script>
