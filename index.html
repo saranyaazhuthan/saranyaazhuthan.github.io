@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Me - Saranya ATV</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <style>
+    /* Customize your page styles here */
+    body {
+      background-color: #f5f5f5;
+      color: #333333;
+      font-family: Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #ffffff;
+      padding: 10px;
+    }
+    .navbar-item {
+      cursor: pointer;
+      color: #333333;
+      text-decoration: none;
+      margin-right: 10px;
+      transition: color 0.3s ease;
+    }
+    .navbar-item.active {
+      color: #0080ff; /* Change to your desired active color */
+      font-weight: bold; /* Make the active link bold */
+    }
+    .navbar-item:hover {
+      color: #666666;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      color: #333333;
+      margin-top: 20px;
+    }
+    .subtitle {
+      color: #666666;
+      margin-bottom: 30px;
+    }
+    .profile-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .profile-image {
+      max-width: 150px;
+      border-radius: 50%;
+    }
+    .contact-info {
+      margin-top: 20px;
+    }
+    .contact-info li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .contact-info li svg {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+    }
+    .contact-info li a {
+      color: #888888;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .contact-info li a:hover {
+      color: #333333;
+    }
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 10px;
+      }
+      .profile-card {
+        padding: 15px;
+      }
+      .profile-image {
+        max-width: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <a class="navbar-item" href="index.html">About Me</a>
+      <a class="navbar-item active" href="contact.html">Contact Information</a>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="profile-card">
+        <img class="profile-image" src="https://via.placeholder.com/150" alt="Profile Picture">
+        <h1 class="title">Saranya ATV</h1>
+        <h2 class="subtitle">Certified Medical Coder</h2>
+        <p>
+          Hello,</br>I'm Saranya ATV, a Bachelor of Arts graduate in Malayalam and a certified medical coder from Kasaragod, Kerala, India.
+          I am driven by the desire to excel in my career in medical coding.
+          I have a deep passion for fashion and movies. In my free time, you'll often find me engrossed in books, watching movies, listening to music, singing, dancing, and writing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-lj5Y58Z82e/jyZtW15DYMnZGp7G58XB22G7ARfYQa5unMQ2aKoyewJC/GeWcZcrDIXlurAuJU16EdUuEG4Sd0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // Highlight active navbar-item
+    const currentLocation = window.location.pathname.split('/').slice(-1)[0];
+    console.log(currentLocation);
+    const navbarItems = document.querySelectorAll('.navbar-item');
+    navbarItems.forEach(item => {
+      if (item.getAttribute('href') === currentLocation) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
