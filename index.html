@@ -99,7 +99,7 @@
   <div class="container">
     <div class="card" id="about-me">
       <!-- About Me Card Content -->
-      <img src="profile-pic.jpeg" alt="Profile Picture" class="profile-picture">
+      <img src="profile-pic.jpeg" alt="Profile Picture" class="profile-picture" id="profile-pic">
       <h2 class="title">Saranya ATV</h2>
       <h3 class="subtitle">Certified Medical Coder</h3>
       <p class="content">
@@ -181,6 +181,18 @@
         showCard(currentCardIndex);
       }
     });
+
+    // Function to disable right-click and long press on the image
+    function disableInteraction(event) {
+        event.preventDefault();
+    }
+
+    // Get the reference to the image element
+    const protectedImage = document.getElementById('profile-pic');
+
+    // Attach the event listeners to disable right-click and long press on the image
+    protectedImage.addEventListener('contextmenu', disableInteraction);
+    protectedImage.addEventListener('touchstart', disableInteraction);
   </script>
 </body>
 </html>
