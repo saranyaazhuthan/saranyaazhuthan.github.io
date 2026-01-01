@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kochi Girls Trip 2026</title>
+    <title>Kochi Trip Itinerary</title>
     
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,8 +26,6 @@
                     colors: {
                         primary: '#0F766E', /* Teal 700 */
                         secondary: '#F59E0B', /* Amber 500 */
-                        surface: '#ffffff',
-                        background: '#F1F5F9', /* Slate 100 */
                     }
                 }
             }
@@ -36,56 +34,64 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased pb-20">
 
-    <!-- Hero Section -->
-    <header class="bg-gradient-to-br from-slate-900 to-teal-900 text-white pt-16 pb-12 rounded-b-[2.5rem] shadow-xl relative overflow-hidden">
-        <div class="absolute top-0 right-0 p-12 opacity-10">
-            <i data-lucide="palmtree" class="w-48 h-48"></i>
+    <!-- Hero Section (Fixed Style) -->
+    <header class="bg-gradient-to-br from-slate-900 to-teal-900 text-white relative overflow-hidden shadow-xl rounded-b-[3rem]">
+        <!-- Decorative Icon Background -->
+        <div class="absolute -right-10 -top-10 opacity-10 pointer-events-none">
+            <i data-lucide="palmtree" class="w-64 h-64"></i>
         </div>
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-medium border border-white/20 mb-4">
-                <i data-lucide="users" class="w-4 h-4"></i>
+
+        <div class="container mx-auto px-6 py-20 text-center relative z-10">
+            <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium border border-white/20 mb-6 shadow-lg">
+                <i data-lucide="users" class="w-4 h-4 text-teal-300"></i>
                 <span>4 Friends</span>
                 <span class="opacity-50">|</span>
                 <span>Jan 2 - 5, 2026</span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">Kochi Trip Itinerary</h1>
-            <p class="text-teal-100 opacity-90">Art, Heritage & Sunsets (No Locker Edition)</p>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4 leading-tight">
+                Kochi Trip Itinerary
+            </h1>
+            <p class="text-teal-100 text-lg opacity-90 font-light max-w-2xl mx-auto">
+                Art, Heritage & Sunsets (No Locker Edition)
+            </p>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 -mt-8 max-w-3xl">
+    <main class="container mx-auto px-4 -mt-10 max-w-3xl relative z-20">
 
         <!-- ALERT BOX: LUGGAGE STRATEGY -->
-        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 shadow-sm mb-8 flex gap-3 items-start">
-            <i data-lucide="briefcase" class="w-5 h-5 text-amber-600 mt-0.5 shrink-0"></i>
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 shadow-lg flex gap-4 items-start mb-10">
+            <div class="bg-amber-100 p-2 rounded-full shrink-0">
+                <i data-lucide="briefcase" class="w-5 h-5 text-amber-700"></i>
+            </div>
             <div>
-                <h3 class="font-bold text-amber-800 text-sm">Luggage Strategy (No Lockers)</h3>
-                <p class="text-xs text-amber-700 mt-1 leading-relaxed">
-                    <strong>Day 2 Morning:</strong> Carry bags on Ferry → Quick stop at Fishing Nets → Chill at Cafe until 12:00 Check-in.<br>
+                <h3 class="font-bold text-amber-900 text-sm uppercase tracking-wide">Luggage Strategy</h3>
+                <p class="text-sm text-amber-800 mt-2 leading-relaxed">
+                    <strong>Day 2 Morning:</strong> Carry bags on Ferry → Visit Fishing Nets & Churches → Chill at Cafe until 12:00 Check-in.<br>
                     <strong>Day 3 Morning:</strong> Hire an Auto for the Mattancherry trip and keep bags in the Auto (Negotiate waiting charge).
                 </p>
             </div>
         </div>
 
         <!-- DAY 1 -->
-        <div class="flex items-center gap-4 mb-6 mt-10">
-            <div class="bg-slate-800 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-md">Day 1</div>
+        <div class="flex items-center gap-4 mb-8">
+            <div class="bg-slate-800 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md tracking-wide">Day 1</div>
             <div class="h-px bg-slate-300 flex-1"></div>
             <span class="text-slate-500 text-sm font-medium">Friday, Jan 2</span>
         </div>
 
         <!-- Card: Train Departure -->
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden mb-6 group hover:shadow-md transition-all">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden mb-8 group hover:shadow-md transition-all">
             <div class="h-1.5 bg-blue-600 w-full"></div>
-            <div class="p-5 flex gap-4">
-                <div class="bg-blue-50 p-3 rounded-xl h-fit">
+            <div class="p-6 flex gap-5 items-start">
+                <div class="bg-blue-50 p-3 rounded-xl h-fit shrink-0">
                     <i data-lucide="train-front" class="w-6 h-6 text-blue-600"></i>
                 </div>
                 <div>
                     <div class="text-xs font-bold text-blue-600 mb-1 tracking-wide">DEPARTURE • 23:50</div>
-                    <h3 class="text-lg font-bold text-slate-900">Train 12618: Mangala Lakshadweep</h3>
-                    <p class="text-slate-500 text-sm mt-1">Boarding from <strong>Nileshwar (NLE)</strong></p>
-                    <div class="mt-3 inline-flex items-center gap-1.5 text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">
+                    <h3 class="text-xl font-bold text-slate-900">Train 12618: Mangala Lakshadweep</h3>
+                    <p class="text-slate-500 mt-1">Boarding from <strong>Nileshwar (NLE)</strong></p>
+                    <div class="mt-4 inline-flex items-center gap-1.5 text-xs bg-slate-100 px-3 py-1.5 rounded-md text-slate-600 font-medium">
                         <i data-lucide="moon" class="w-3 h-3"></i>
                         Overnight Journey
                     </div>
@@ -94,178 +100,234 @@
         </div>
 
         <!-- DAY 2 -->
-        <div class="flex items-center gap-4 mb-6 mt-12">
-            <div class="bg-teal-700 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-md">Day 2</div>
+        <div class="flex items-center gap-4 mb-8 mt-12">
+            <div class="bg-teal-700 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md tracking-wide">Day 2</div>
             <div class="h-px bg-slate-300 flex-1"></div>
             <span class="text-slate-500 text-sm font-medium">Saturday, Jan 3</span>
         </div>
 
-        <div class="relative pl-4 sm:pl-8 border-l-2 border-slate-200 space-y-8">
+        <div class="relative pl-6 sm:pl-10 border-l-2 border-slate-200 space-y-10">
             
-            <!-- Item 1 -->
-            <div class="relative">
-                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
-                    <i data-lucide="map-pin" class="w-4 h-4 text-teal-700"></i>
+            <!-- Item 1: Arrival -->
+            <div class="relative group">
+                <div class="absolute -left-[33px] sm:-left-[49px] top-0 bg-teal-50 border-4 border-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm z-10">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-teal-700"></i>
                 </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="flex justify-between items-start mb-2">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-teal-100 transition-colors">
+                    <div class="flex justify-between items-start mb-3">
                         <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">07:30</span>
                         <a href="https://maps.google.com/?q=Ernakulam+Junction" target="_blank" class="text-teal-600 hover:text-teal-800">
                             <i data-lucide="external-link" class="w-4 h-4"></i>
                         </a>
                     </div>
-                    <h3 class="font-bold text-lg mb-1">Arrival & Ferry</h3>
-                    <p class="text-sm text-slate-600">Arrive Ernakulam Jn (South). Auto to Boat Jetty (3km). Take the <strong>Public Ferry (₹6)</strong> to Fort Kochi. Enjoy the morning breeze!</p>
+                    <h3 class="font-bold text-lg mb-2">Arrival & Ferry</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Arrive Ernakulam Jn (South). Take an Auto to <strong>Ernakulam Boat Jetty</strong> (~3km). 
+                        Take the government ferry (₹6) to Fort Kochi. Enjoy the scenic morning ride across the backwaters!
+                    </p>
                 </div>
             </div>
 
-            <!-- Item 2: Chinese Nets -->
-            <div class="relative">
-                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
-                    <i data-lucide="camera" class="w-4 h-4 text-teal-700"></i>
+            <!-- Item 2: Heritage Walk -->
+            <div class="relative group">
+                <div class="absolute -left-[33px] sm:-left-[49px] top-0 bg-teal-50 border-4 border-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm z-10">
+                    <i data-lucide="camera" class="w-5 h-5 text-teal-700"></i>
                 </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="flex justify-between items-start mb-2">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-teal-100 transition-colors">
+                    <div class="flex justify-between items-start mb-3">
                         <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">08:45</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-1 flex items-center gap-2">
-                        Chinese Fishing Nets
-                        <span class="text-[10px] bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded border border-orange-200">Must See</span>
+                    <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                        Fort Kochi Heritage Walk
+                        <span class="text-[10px] bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full border border-orange-200 font-bold">MUST SEE</span>
                     </h3>
-                    <p class="text-sm text-slate-600 mb-2">
-                        The Ferry drops you very close to the nets. Walk there (carry bags, it's short). Take the iconic photos while the morning light is good.
-                    </p>
-                    <a href="https://maps.google.com/?q=Chinese+Fishing+Nets" target="_blank" class="text-sm font-medium text-teal-600 flex items-center gap-1 hover:underline">
-                        <i data-lucide="map" class="w-3 h-3"></i> View on Map
+                    
+                    <div class="space-y-4">
+                        <div class="flex gap-3 items-start">
+                            <i data-lucide="anchor" class="w-4 h-4 text-teal-600 mt-1"></i>
+                            <div>
+                                <strong class="text-slate-800 text-sm">Chinese Fishing Nets</strong>
+                                <p class="text-xs text-slate-500 mt-0.5">Iconic nets introduced by Chinese traders. Best for photos.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <i data-lucide="church" class="w-4 h-4 text-teal-600 mt-1"></i>
+                            <div>
+                                <strong class="text-slate-800 text-sm">St. Francis Church</strong>
+                                <p class="text-xs text-slate-500 mt-0.5">India's oldest European church. Vasco da Gama was originally buried here.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <i data-lucide="image" class="w-4 h-4 text-teal-600 mt-1"></i>
+                            <div>
+                                <strong class="text-slate-800 text-sm">Santa Cruz Basilica</strong>
+                                <p class="text-xs text-slate-500 mt-0.5">Stunning Gothic architecture with beautiful murals and stained glass.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Chinese+Fishing+Nets" target="_blank" class="mt-4 text-xs font-bold text-teal-600 flex items-center gap-1 hover:underline uppercase tracking-wide">
+                        <i data-lucide="map" class="w-3 h-3"></i> Open Map
                     </a>
                 </div>
             </div>
 
             <!-- Item 3: Cafe Chill -->
-            <div class="relative">
-                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
-                    <i data-lucide="coffee" class="w-4 h-4 text-teal-700"></i>
+            <div class="relative group">
+                <div class="absolute -left-[33px] sm:-left-[49px] top-0 bg-teal-50 border-4 border-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm z-10">
+                    <i data-lucide="coffee" class="w-5 h-5 text-teal-700"></i>
                 </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 ring-1 ring-orange-100">
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="text-xs font-bold bg-orange-50 text-orange-600 px-2 py-1 rounded">09:30 - 12:00</span>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 ring-1 ring-orange-100 bg-gradient-to-br from-orange-50/50 to-white">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs font-bold bg-orange-100 text-orange-700 px-2 py-1 rounded">09:45 - 12:00</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-1">Slow Breakfast (Bag Station)</h3>
-                    <p class="text-sm text-slate-600">
+                    <h3 class="font-bold text-lg mb-2">Slow Breakfast (Bag Station)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
                         Since check-in is at 12, head to a spacious cafe. 
-                        <strong>Recommendation:</strong> <em>Kashi Art Cafe</em> (Burgher St). It has space. 
+                        <strong>Recommendation:</strong> <em>Kashi Art Cafe</em> (Burgher St). 
                         Relax, eat, and take turns walking Princess Street if needed.
                     </p>
                 </div>
             </div>
 
             <!-- Item 4: Checkin -->
-            <div class="relative">
-                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-600 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
-                    <i data-lucide="home" class="w-4 h-4 text-white"></i>
+            <div class="relative group">
+                <div class="absolute -left-[33px] sm:-left-[49px] top-0 bg-teal-600 border-4 border-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm z-10">
+                    <i data-lucide="home" class="w-5 h-5 text-white"></i>
                 </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-teal-600">
-                    <div class="flex justify-between items-start mb-2">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-teal-600">
+                    <div class="flex justify-between items-start mb-3">
                         <span class="text-xs font-bold bg-teal-50 text-teal-700 px-2 py-1 rounded">12:00</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-1">Check-In</h3>
-                    <p class="text-sm text-slate-600"><strong>Honolulu Home</strong>. Drop the bags finally! Freshen up.</p>
+                    <h3 class="font-bold text-lg mb-2">Check-In @ Honolulu Home</h3>
+                    <p class="text-sm text-slate-600">Drop the bags finally! Freshen up, charge phones, and get ready for the afternoon.</p>
                 </div>
             </div>
 
             <!-- Item 5: Biennale -->
-            <div class="relative">
-                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
-                    <i data-lucide="palette" class="w-4 h-4 text-teal-700"></i>
+            <div class="relative group">
+                <div class="absolute -left-[33px] sm:-left-[49px] top-0 bg-teal-50 border-4 border-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm z-10">
+                    <i data-lucide="palette" class="w-5 h-5 text-teal-700"></i>
                 </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="flex justify-between items-start mb-2">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-3">
                         <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">13:30</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-1">Kochi-Muziris Biennale</h3>
-                    <p class="text-sm text-slate-600">Walk to <strong>Aspinwall House</strong>. Spend the afternoon exploring the art installations.</p>
+                    <h3 class="font-bold text-lg mb-2">Kochi-Muziris Biennale</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Walk to <strong>Aspinwall House</strong>. It is the main venue for the art festival. 
+                        Spend your afternoon exploring the installations and the sea view.
+                    </p>
                 </div>
             </div>
 
-            <!-- Item 6: Budget Boat Ride -->
-            <div class="relative">
-                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
-                    <i data-lucide="ship" class="w-4 h-4 text-teal-700"></i>
+            <!-- Item 6: Sunset Boat -->
+            <div class="relative group">
+                <div class="absolute -left-[33px] sm:-left-[49px] top-0 bg-teal-50 border-4 border-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm z-10">
+                    <i data-lucide="sunset" class="w-5 h-5 text-teal-700"></i>
                 </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 bg-gradient-to-r from-orange-50 to-white">
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="text-xs font-bold bg-orange-100 text-orange-700 px-2 py-1 rounded">17:30 - Sunset</span>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 bg-gradient-to-r from-orange-50 to-white">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs font-bold bg-orange-100 text-orange-700 px-2 py-1 rounded">17:30</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-1 text-slate-800">Budget Sunset Boat Ride 🌅</h3>
-                    <ul class="text-sm text-slate-600 list-disc ml-4 space-y-1">
-                        <li>Take Public Ferry to Ernakulam Marine Drive.</li>
-                        <li><strong>Option A (Cheapest):</strong> Just enjoy the view from the ferry (₹6).</li>
-                        <li><strong>Option B (Recommended):</strong> KSINC Tourist Boat from Marine Drive (~₹150/person).</li>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900">Budget Sunset Boat Ride 🌅</h3>
+                    <ul class="text-sm text-slate-600 list-disc ml-4 space-y-1.5">
+                        <li>Take the Public Ferry to Ernakulam Marine Drive (Scenic & Cheap).</li>
+                        <li>Optional: Take a KSINC Tourist Boat from Marine Drive (~₹150).</li>
                         <li>See the <strong>Rainbow Bridge</strong> lights at Marine Drive.</li>
                     </ul>
+                </div>
+            </div>
+
+            <!-- Item 7: Return -->
+            <div class="relative group">
+                <div class="absolute -left-[33px] sm:-left-[49px] top-0 bg-teal-50 border-4 border-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm z-10">
+                    <i data-lucide="moon" class="w-5 h-5 text-teal-700"></i>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">20:30</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Return to Homestay</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        1. Take the ferry back from Marine Drive to Fort Kochi.<br>
+                        2. From the jetty, walk or take an auto to <strong>Honolulu Home</strong>.<br>
+                        3. Rest for the next day's early start.
+                    </p>
                 </div>
             </div>
         </div>
 
         <!-- DAY 3 -->
-        <div class="flex items-center gap-4 mb-6 mt-12">
-            <div class="bg-teal-700 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-md">Day 3</div>
+        <div class="flex items-center gap-4 mb-8 mt-12">
+            <div class="bg-teal-700 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md tracking-wide">Day 3</div>
             <div class="h-px bg-slate-300 flex-1"></div>
             <span class="text-slate-500 text-sm font-medium">Sunday, Jan 4</span>
         </div>
 
-        <div class="relative pl-4 sm:pl-8 border-l-2 border-slate-200 space-y-8">
+        <div class="relative pl-6 sm:pl-10 border-l-2 border-slate-200 space-y-10">
             
             <!-- Item 1: Auto Hire -->
-            <div class="relative">
-                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
-                    <i data-lucide="backpack" class="w-4 h-4 text-teal-700"></i>
+            <div class="relative group">
+                <div class="absolute -left-[33px] sm:-left-[49px] top-0 bg-teal-50 border-4 border-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm z-10">
+                    <i data-lucide="backpack" class="w-5 h-5 text-teal-700"></i>
                 </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="flex justify-between items-start mb-2">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-3">
                         <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">09:00</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-1">Checkout & Auto Strategy</h3>
-                    <p class="text-sm text-slate-600">
+                    <h3 class="font-bold text-lg mb-2">Checkout & Auto Strategy</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
                         Check out. Hire an Auto Rickshaw for 3-4 hours. 
                         <strong>Load bags into the auto.</strong> The driver waits while you visit spots.
-                        <span class="block mt-1 text-xs text-slate-500 italic">(Negotiate total fare approx ₹400-600 for the trip including waiting).</span>
+                        <span class="block mt-2 text-xs text-slate-500 italic bg-slate-50 p-2 rounded border border-slate-100">
+                            💡 Negotiate total fare approx ₹400-600 for the trip including waiting.
+                        </span>
                     </p>
                 </div>
             </div>
 
             <!-- Item 2: Mattancherry -->
-            <div class="relative">
-                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
-                    <i data-lucide="landmark" class="w-4 h-4 text-teal-700"></i>
+            <div class="relative group">
+                <div class="absolute -left-[33px] sm:-left-[49px] top-0 bg-teal-50 border-4 border-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm z-10">
+                    <i data-lucide="landmark" class="w-5 h-5 text-teal-700"></i>
                 </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="flex justify-between items-start mb-2">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-3">
                         <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">09:30 - 11:30</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-1">Mattancherry (Open Sunday)</h3>
-                    <p class="text-sm text-slate-600 mb-2">
-                        1. <strong>Mattancherry Palace</strong> (Dutch Palace).<br>
-                        2. <strong>Paradesi Synagogue</strong> (Open today!).<br>
-                        3. <strong>Jew Town</strong> Shopping (Spices/Antiques).
-                    </p>
-                    <div class="inline-flex items-center gap-1 text-xs text-teal-600 bg-teal-50 px-2 py-1 rounded">
+                    <h3 class="font-bold text-lg mb-2">Mattancherry (Open Sunday)</h3>
+                    <ul class="text-sm text-slate-600 space-y-2 mt-2">
+                        <li class="flex gap-2">
+                            <span class="font-bold text-teal-700">1.</span> 
+                            <span><strong>Mattancherry Palace</strong> (Dutch Palace). Famous murals.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="font-bold text-teal-700">2.</span> 
+                            <span><strong>Paradesi Synagogue</strong> (Open today!). Beautiful interiors.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="font-bold text-teal-700">3.</span> 
+                            <span><strong>Jew Town</strong> Shopping (Spices/Antiques).</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 inline-flex items-center gap-1.5 text-xs text-teal-700 bg-teal-50 px-2 py-1 rounded font-medium">
                         <i data-lucide="map-pin" class="w-3 h-3"></i> 2.5km from Fort Kochi
                     </div>
                 </div>
             </div>
 
             <!-- Item 3: Lunch -->
-            <div class="relative">
-                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
-                    <i data-lucide="utensils" class="w-4 h-4 text-teal-700"></i>
+            <div class="relative group">
+                <div class="absolute -left-[33px] sm:-left-[49px] top-0 bg-teal-50 border-4 border-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm z-10">
+                    <i data-lucide="utensils" class="w-5 h-5 text-teal-700"></i>
                 </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="flex justify-between items-start mb-2">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-3">
                         <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">12:30</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-1">Lunch with a View</h3>
-                    <p class="text-sm text-slate-600">
+                    <h3 class="font-bold text-lg mb-2">Lunch with a View</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
                         Try <strong>Ginger House Museum Hotel</strong> (Waterfront) in Jew Town. 
                         After lunch, take the auto/ferry back towards Ernakulam.
                     </p>
@@ -273,20 +335,22 @@
             </div>
 
              <!-- Card: Train Return -->
-            <div class="relative">
-                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-600 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
-                    <i data-lucide="train-front" class="w-4 h-4 text-white"></i>
+            <div class="relative group">
+                <div class="absolute -left-[33px] sm:-left-[49px] top-0 bg-teal-600 border-4 border-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm z-10">
+                    <i data-lucide="train-front" class="w-5 h-5 text-white"></i>
                 </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-teal-600 group">
-                    <div class="h-1.5 w-full"></div>
-                    <div class="flex gap-4">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-teal-600">
+                    <div class="flex gap-5 items-start">
                         <div>
                             <div class="text-xs font-bold text-teal-600 mb-1 tracking-wide">RETURN • 20:25</div>
-                            <h3 class="text-lg font-bold text-slate-900">Train 12977: Marusagar SF</h3>
-                            <p class="text-slate-500 text-sm mt-1">Departs <strong>Ernakulam Jn (ERS)</strong></p>
-                            <p class="text-slate-500 text-sm">Arrives Kasaragod: <strong>02:49 AM</strong> (Mon)</p>
-                            <div class="mt-3 text-sm text-orange-600 font-medium bg-orange-50 p-2 rounded">
-                                ⚠️ Reach station by 19:30. Have light dinner nearby.
+                            <h3 class="text-xl font-bold text-slate-900">Train 12977: Marusagar SF</h3>
+                            <div class="mt-2 space-y-1">
+                                <p class="text-slate-600 text-sm">Departs <strong>Ernakulam Jn (ERS)</strong></p>
+                                <p class="text-slate-600 text-sm">Arrives Kasaragod: <strong>02:49 AM</strong> (Mon)</p>
+                            </div>
+                            <div class="mt-4 text-sm text-orange-700 font-medium bg-orange-50 p-2.5 rounded-lg border border-orange-100 flex gap-2 items-center">
+                                <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                                Reach station by 19:30. Have light dinner nearby.
                             </div>
                         </div>
                     </div>
