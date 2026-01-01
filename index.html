@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,12 +49,41 @@
 
   <!-- Hero Section -->
   <header class="bg-gradient-to-br from-slate-900 to-teal-900 text-white relative overflow-hidden shadow-xl rounded-b-[3rem]">
+      
       <!-- Background Decoration -->
       <div class="absolute -right-10 -top-10 opacity-10 pointer-events-none">
           <i data-lucide="globe-2" class="w-64 h-64"></i>
       </div>
 
-      <div class="container mx-auto px-6 pt-12 pb-16 text-center relative z-10">
+      <!-- Navigation Bar -->
+      <nav class="relative z-50 pt-6 px-4">
+          <div class="max-w-3xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2.5 flex justify-between items-center shadow-lg">
+              <!-- Home/Brand -->
+              <a href="#" class="font-bold text-lg tracking-tight pl-2">Saranya.</a>
+              
+              <!-- Menu Links -->
+              <div class="hidden sm:flex gap-6 text-sm font-medium text-teal-50">
+                  <a href="#about" class="hover:text-white hover:underline decoration-amber-400 decoration-2 underline-offset-4 transition-all">About Me</a>
+                  <a href="#passions" class="hover:text-white hover:underline decoration-amber-400 decoration-2 underline-offset-4 transition-all">Passions</a>
+                  <a href="#contact" class="hover:text-white hover:underline decoration-amber-400 decoration-2 underline-offset-4 transition-all">Connect</a>
+              </div>
+
+              <!-- Kochi Trip Button -->
+              <a href="/kochi" class="bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold px-4 py-2 rounded-full transition-all shadow-md flex items-center gap-2 transform hover:scale-105">
+                  <i data-lucide="palmtree" class="w-3.5 h-3.5"></i>
+                  <span>Trip to Kochi</span>
+              </a>
+          </div>
+          
+          <!-- Mobile Menu (Simple row for small screens) -->
+          <div class="sm:hidden flex justify-center gap-5 text-xs font-medium text-teal-100 mt-4">
+              <a href="#about">About</a>
+              <a href="#passions">Passions</a>
+              <a href="#contact">Connect</a>
+          </div>
+      </nav>
+
+      <div class="container mx-auto px-6 pt-8 pb-16 text-center relative z-10">
           <!-- Profile Picture -->
           <div class="relative w-32 h-32 mx-auto mb-6">
               <div class="absolute inset-0 bg-teal-500 rounded-full opacity-20 blur-lg"></div>
@@ -90,7 +119,7 @@
       </div>
 
       <!-- SECTION: About & Education -->
-      <div class="flex items-center gap-4 mb-6">
+      <div id="about" class="flex items-center gap-4 mb-6 scroll-mt-28">
           <div class="bg-slate-800 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md tracking-wide">About Me</div>
           <div class="h-px bg-slate-300 flex-1"></div>
       </div>
@@ -124,7 +153,7 @@
       </div>
 
       <!-- SECTION: Passions & Hobbies -->
-      <div class="flex items-center gap-4 mb-6 mt-12">
+      <div id="passions" class="flex items-center gap-4 mb-6 mt-12 scroll-mt-28">
           <div class="bg-teal-700 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md tracking-wide">Passions</div>
           <div class="h-px bg-slate-300 flex-1"></div>
       </div>
@@ -163,7 +192,7 @@
       </div>
 
       <!-- SECTION: Contact -->
-      <div class="flex items-center gap-4 mb-6 mt-12">
+      <div id="contact" class="flex items-center gap-4 mb-6 mt-12 scroll-mt-28">
           <div class="bg-slate-800 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md tracking-wide">Connect</div>
           <div class="h-px bg-slate-300 flex-1"></div>
       </div>
