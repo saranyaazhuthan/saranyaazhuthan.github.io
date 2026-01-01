@@ -3,320 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kochi Trip: Optimized Route</title>
+    <title>Kochi 2026 | Modern Itinerary</title>
+    
+    <!-- Modern Font: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary: #006D77; /* Deep Teal */
-            --secondary: #83C5BE; /* Soft Teal */
-            --accent: #E29578; /* Terracotta */
-            --bg: #EDF6F9;
-            --card-bg: #FFFFFF;
-            --text: #2B2D42;
+            --primary: #2563EB; /* Modern Blue */
+            --primary-light: #EFF6FF;
+            --accent: #F97316; /* Vibrant Orange */
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-main: #1E293B;
+            --text-sub: #64748B;
+            --border: #E2E8F0;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
-            background-color: var(--bg);
-            color: var(--text);
-            padding-bottom: 60px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Hero Header */
-        header {
-            background: linear-gradient(135deg, var(--primary), #264653);
+        /* Modern Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0F172A, #1E293B);
             color: white;
-            padding: 30px 20px;
+            padding: 60px 20px 40px;
             text-align: center;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        h1 { margin: 0; font-size: 2rem; }
-        .subtitle { opacity: 0.9; margin-top: 5px; font-size: 0.95rem; }
+
+        .hero h1 { margin: 0; font-weight: 700; font-size: 2.5rem; letter-spacing: -1px; }
+        .hero .meta { 
+            display: inline-flex; gap: 15px; margin-top: 15px; 
+            background: rgba(255,255,255,0.1); padding: 8px 16px; 
+            border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px);
+        }
 
         /* Container */
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 700px; margin: 0 auto; padding: 30px 20px; }
 
-        /* Section Headers */
-        h2 {
-            border-left: 5px solid var(--accent);
-            padding-left: 15px;
-            margin-top: 40px;
-            color: var(--primary);
+        /* Day Headers */
+        .day-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-top: 50px; margin-bottom: 20px;
+            position: sticky; top: 10px; z-index: 10;
+        }
+        .day-title {
+            background: var(--text-main); color: white;
+            padding: 8px 20px; border-radius: 50px;
+            font-weight: 600; font-size: 1.1rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .day-date { font-weight: 500; color: var(--text-sub); }
+
+        /* Timeline Layout */
+        .timeline { position: relative; padding-left: 20px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 0; top: 10px; bottom: 0;
+            width: 2px; background: var(--border);
         }
 
-        /* Timeline Cards */
-        .stop-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
+        /* Cards */
+        .card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
             position: relative;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-            border-left: 4px solid #ddd;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
         }
-        .stop-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        
-        /* Dynamic Border Colors for Types */
-        .type-transit { border-left-color: #A8DADC; }
-        .type-food { border-left-color: #E9C46A; }
-        .type-sight { border-left-color: var(--accent); }
-        .type-stay { border-left-color: var(--primary); }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
 
-        /* Layout within Card */
-        .card-header { display: flex; justify-content: space-between; align-items: flex-start; }
-        .time-badge { 
-            background: #eee; color: #555; 
-            padding: 4px 8px; border-radius: 6px; 
-            font-size: 0.8rem; font-weight: bold; 
+        /* Timeline Dot */
+        .card::after {
+            content: ''; position: absolute; left: -25px; top: 28px;
+            width: 12px; height: 12px; border-radius: 50%;
+            background: var(--primary); border: 4px solid var(--bg);
         }
-        .location-name { 
-            font-size: 1.2rem; font-weight: 700; margin: 5px 0; 
-            color: var(--primary); text-decoration: none;
-        }
-        .location-name:hover { text-decoration: underline; }
-        
-        /* Distance Badge */
-        .dist-badge {
-            display: inline-flex;
-            align-items: center;
-            background: #e0f7fa;
-            color: #006064;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 10px;
-            margin-top: 5px;
-        }
-        .dist-icon { margin-right: 5px; }
 
-        /* Details */
-        .details { font-size: 0.95rem; color: #444; margin-top: 5px; }
-        .price { font-weight: bold; color: var(--accent); font-size: 0.9rem; margin-top: 5px; display: block; }
-
-        /* Train Box */
-        .train-summary {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Card Content */
+        .card-time { 
+            font-weight: 600; color: var(--accent); font-size: 0.9rem; margin-bottom: 8px; display: block; 
         }
-        .train-route { font-weight: bold; font-size: 0.9rem; }
-        .train-time { color: var(--accent); font-weight: bold; }
+        .card-title {
+            margin: 0; font-size: 1.25rem; font-weight: 700; color: var(--text-main);
+            text-decoration: none; display: flex; align-items: center; gap: 8px;
+        }
+        .card-title:hover { color: var(--primary); }
+        .card-meta {
+            display: flex; align-items: center; gap: 15px; margin-top: 12px;
+            font-size: 0.85rem; color: var(--text-sub);
+        }
+        .card-desc { margin-top: 12px; color: #475569; font-size: 0.95rem; }
+
+        /* Badges */
+        .badge {
+            padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 0.75rem;
+        }
+        .badge-dist { background: var(--primary-light); color: var(--primary); }
+        .badge-alert { background: #FEF2F2; color: #DC2626; border: 1px solid #FECACA; display: block; margin-top: 10px; padding: 10px; border-radius: 8px; }
+
+        /* Train Block */
+        .train-block {
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            border: none; border-left: 5px solid var(--primary);
+        }
 
         /* Footer */
-        .map-legend {
-            text-align: center; font-size: 0.8rem; color: #777; margin-top: 30px;
+        footer { text-align: center; color: var(--text-sub); font-size: 0.85rem; padding-bottom: 40px; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .container { padding: 20px 15px; }
+            .card { padding: 18px; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>🌴 Kochi Itinerary</h1>
-    <div class="subtitle">Optimized by Distance & Location</div>
-    <div class="subtitle" style="margin-top:10px;">Click location names for Maps 🗺️</div>
-</header>
-
-<div class="container">
-
-    <!-- Day 2 -->
-    <h2>🌅 Day 2: Saturday, Jan 3</h2>
-    <div style="font-size:0.9rem; color:#666; margin-bottom:20px;">Focus: Fort Kochi (North) & Biennale</div>
-
-    <!-- Stop 1 -->
-    <div class="stop-card type-transit">
-        <div class="card-header">
-            <span class="time-badge">07:30</span>
+    <div class="hero">
+        <h1>Kochi Trip '26</h1>
+        <div class="meta">
+            <span>Jan 2 - Jan 5</span>
+            <span>•</span>
+            <span>4 Friends</span>
+            <span>•</span>
+            <span>No Locker Plan</span>
         </div>
-        <a href="https://maps.google.com/?q=Ernakulam+Junction+Railway+Station" target="_blank" class="location-name">📍 Ernakulam Jn (South)</a>
-        <div class="details">Arrival by Train 12618. Exit station.</div>
     </div>
 
-    <!-- Stop 2 -->
-    <div class="stop-card type-transit">
-        <div class="dist-badge">
-            <span class="dist-icon">🛺</span> 3.0 km (15 min auto) from Station
+    <div class="container">
+
+        <!-- DAY 1 -->
+        <div class="day-header">
+            <div class="day-title">Day 1</div>
+            <div class="day-date">Fri, Jan 2</div>
         </div>
-        <div class="card-header">
-            <span class="time-badge">08:00</span>
+
+        <div class="timeline">
+            <!-- Train Departure -->
+            <div class="card train-block">
+                <span class="card-time">23:50 • DEPARTURE</span>
+                <div class="card-title">🚂 Train 12618: Mangala Lakshadweep</div>
+                <div class="card-desc">
+                    Board at <strong>Nileshwar (NLE)</strong>. <br>
+                    Rest overnight on the train.
+                </div>
+            </div>
         </div>
-        <a href="https://maps.google.com/?q=Ernakulam+Boat+Jetty" target="_blank" class="location-name">📍 Ernakulam Boat Jetty</a>
-        <div class="details">Take the government ferry to Fort Kochi. Avoid private boats to save money.</div>
-        <span class="price">Cost: ₹150 (Auto) + ₹10 (Ferry)</span>
+
+        <!-- DAY 2 -->
+        <div class="day-header">
+            <div class="day-title">Day 2</div>
+            <div class="day-date">Sat, Jan 3</div>
+        </div>
+
+        <div class="timeline">
+            <!-- Arrival -->
+            <div class="card">
+                <span class="card-time">07:30 • ARRIVAL</span>
+                <a href="https://maps.google.com/?q=Ernakulam+Junction" target="_blank" class="card-title">📍 Ernakulam Jn (South)</a>
+                <div class="badge-alert">🎒 <strong>Luggage Alert:</strong> You have bags until 12:00 PM. No lockers available.</div>
+            </div>
+
+            <!-- Ferry -->
+            <div class="card">
+                <span class="card-time">08:00</span>
+                <a href="https://maps.google.com/?q=Ernakulam+Boat+Jetty" target="_blank" class="card-title">🚤 Ferry to Fort Kochi</a>
+                <div class="card-meta">
+                    <span class="badge badge-dist">3 km from Station (Auto)</span>
+                    <span>₹10 Ticket</span>
+                </div>
+                <div class="card-desc">Take the government ferry. Luggage is allowed and easy to carry on the boat.</div>
+            </div>
+
+            <!-- Slow Breakfast -->
+            <div class="card">
+                <span class="card-time">08:45 - 11:30 • THE "BAG" HOURS</span>
+                <a href="https://maps.google.com/?q=Kashi+Art+Cafe+Fort+Kochi" target="_blank" class="card-title">☕ Slow Breakfast & Chill</a>
+                <div class="card-meta">
+                    <span class="badge badge-dist">🚶 5 min from Ferry</span>
+                </div>
+                <div class="card-desc">
+                    Since you can't drop bags, go to a spacious cafe. 
+                    <br><strong>Recommendation:</strong> <em>Qissa Café</em> (Opens 8:30) or wait for <em>Kashi Art Café</em> (Opens 8:30). 
+                    <br>Relax, have coffee, and take turns walking nearby streets if needed.
+                </div>
+            </div>
+
+            <!-- Check In -->
+            <div class="card" style="border-color: var(--accent);">
+                <span class="card-time">12:00 • CHECK-IN</span>
+                <a href="https://maps.google.com/?q=Honolulu+Home+Fort+Kochi" target="_blank" class="card-title">🏠 Honolulu Home</a>
+                <div class="card-meta">
+                    <span class="badge badge-dist">🛺 5 min Auto from Cafe</span>
+                </div>
+                <div class="card-desc">
+                    <strong>Finally!</strong> Drop the bags, freshen up, and get ready to explore.
+                </div>
+            </div>
+
+            <!-- Biennale -->
+            <div class="card">
+                <span class="card-time">13:30 - 16:30</span>
+                <a href="https://maps.google.com/?q=Aspinwall+House" target="_blank" class="card-title">🎨 Aspinwall House (Biennale)</a>
+                <div class="card-meta">
+                    <span class="badge badge-dist">🚶 10 min walk</span>
+                </div>
+                <div class="card-desc">The main venue of the Art Biennale. Spend the afternoon here.</div>
+            </div>
+
+            <!-- Evening -->
+            <div class="card">
+                <span class="card-time">17:30 - 20:00</span>
+                <a href="https://maps.google.com/?q=Marine+Drive+Kochi" target="_blank" class="card-title">🌇 Marine Drive Sunset</a>
+                <div class="card-meta">
+                    <span class="badge badge-dist">🚤 Ferry Ride</span>
+                </div>
+                <div class="card-desc">Ferry to Ernakulam side. See the Rainbow Bridge lights. Dinner at local stalls. Ferry back to sleep.</div>
+            </div>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="day-header">
+            <div class="day-title">Day 3</div>
+            <div class="day-date">Sun, Jan 4</div>
+        </div>
+
+        <div class="timeline">
+            <!-- Checkout -->
+            <div class="card">
+                <span class="card-time">09:00 • CHECK-OUT</span>
+                <div class="card-title">🎒 Carry Bags / Auto Strategy</div>
+                <div class="card-desc">
+                    Check out. Since there are no lockers, hire an Auto to take you to Mattancherry and keep bags in the Auto while you visit (negotiate "Waiting Charge").
+                    <br><em>Or verify if Honolulu Home allows bag storage until evening (most do, even if no early check-in).</em>
+                </div>
+            </div>
+
+            <!-- Mattancherry -->
+            <div class="card">
+                <span class="card-time">09:30 - 11:30</span>
+                <a href="https://maps.google.com/?q=Mattancherry+Palace" target="_blank" class="card-title">🏛️ Palace & Synagogue</a>
+                <div class="card-meta">
+                    <span class="badge badge-dist">🛺 2.5 km from Fort Kochi</span>
+                </div>
+                <div class="card-desc">
+                    <strong>Dutch Palace</strong> + <strong>Paradesi Synagogue</strong>. Both are OPEN today (Sunday).
+                </div>
+            </div>
+
+            <!-- Lunch -->
+            <div class="card">
+                <span class="card-time">12:00</span>
+                <a href="https://maps.google.com/?q=Ginger+House+Museum+Hotel" target="_blank" class="card-title">🥘 Ginger House / Jew Town</a>
+                <div class="card-desc">Lunch by the waterfront. Shop for spices in Jew Town.</div>
+            </div>
+
+            <!-- Train Return -->
+            <div class="card train-block">
+                <span class="card-time">20:25 • RETURN</span>
+                <div class="card-title">🚂 Train 12977: Marusagar SF</div>
+                <div class="card-meta">
+                    <span class="badge badge-dist">From Ernakulam Jn (ERS)</span>
+                </div>
+                <div class="card-desc">
+                    Head to station by 19:00 to be safe.
+                    <br><strong>Arrival Kasaragod (KGQ):</strong> 02:49 AM (Monday)
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Stop 3 -->
-    <div class="stop-card type-food">
-        <div class="dist-badge">
-            <span class="dist-icon">🚶</span> 100m (2 min walk) from Jetty
-        </div>
-        <div class="card-header">
-            <span class="time-badge">08:45</span>
-        </div>
-        <a href="https://maps.google.com/?q=Samridhi+Hotel+Fort+Kochi" target="_blank" class="location-name">📍 Samridhi Hotel / Jetty Area</a>
-        <div class="details">Cheap & authentic Kerala breakfast.</div>
-        <span class="price">~₹80 per person</span>
-    </div>
-
-    <!-- Stop 4 -->
-    <div class="stop-card type-stay">
-        <div class="dist-badge">
-            <span class="dist-icon">🛺</span> 1.5 km (5 min auto) from Breakfast
-        </div>
-        <div class="card-header">
-            <span class="time-badge">09:30</span>
-        </div>
-        <a href="https://maps.google.com/?q=Honolulu+Home+Fort+Kochi" target="_blank" class="location-name">🏠 Honolulu Home</a>
-        <div class="details"><strong>Drop Bags Only.</strong> (Check-in is usually 12 PM). Keep auto to go back to sightseeing area.</div>
-    </div>
-
-    <!-- Stop 5 -->
-    <div class="stop-card type-sight">
-        <div class="dist-badge">
-            <span class="dist-icon">🚶</span> 1.0 km (12 min walk) from Stay
-        </div>
-        <div class="card-header">
-            <span class="time-badge">10:00 - 11:30</span>
-        </div>
-        <a href="https://maps.google.com/?q=Santa+Cruz+Cathedral+Basilica+Fort+Kochi" target="_blank" class="location-name">📍 Santa Cruz Basilica & St. Francis</a>
-        <div class="details">Start with Basilica, then walk 5 mins to St. Francis Church (Vasco da Gama's burial spot).</div>
-        <span class="price">Free Entry</span>
-    </div>
-
-    <!-- Stop 6 -->
-    <div class="stop-card type-sight">
-        <div class="dist-badge">
-            <span class="dist-icon">🚶</span> 300m (4 min walk) from Church
-        </div>
-        <div class="card-header">
-            <span class="time-badge">11:30 - 12:30</span>
-        </div>
-        <a href="https://maps.google.com/?q=Chinese+Fishing+Nets+Fort+Kochi" target="_blank" class="location-name">📍 Chinese Fishing Nets</a>
-        <div class="details">Iconic photo spot. Walk along the coast towards Aspinwall.</div>
-    </div>
-
-    <!-- Stop 7 -->
-    <div class="stop-card type-sight">
-        <div class="dist-badge">
-            <span class="dist-icon">🚶</span> 600m (7 min walk) from Nets
-        </div>
-        <div class="card-header">
-            <span class="time-badge">14:00 - 17:00</span>
-        </div>
-        <a href="https://maps.google.com/?q=Aspinwall+House+Fort+Kochi" target="_blank" class="location-name">🎨 Aspinwall House (Biennale)</a>
-        <div class="details"><strong>Main Event.</strong> Spend the afternoon exploring art. Have lunch at a cafe nearby before entering.</div>
-        <span class="price">Entry: ~₹150</span>
-    </div>
-
-    <!-- Stop 8 -->
-    <div class="stop-card type-sight">
-        <div class="dist-badge">
-            <span class="dist-icon">🚤</span> Ferry Ride
-        </div>
-        <div class="card-header">
-            <span class="time-badge">17:30 - 20:00</span>
-        </div>
-        <a href="https://maps.google.com/?q=Marine+Drive+Kochi" target="_blank" class="location-name">📍 Marine Drive (Ernakulam Side)</a>
-        <div class="details">Take ferry to Ernakulam for sunset/dinner. See Rainbow Bridge. Take ferry back to Fort Kochi to sleep.</div>
-    </div>
-
-    <!-- Day 3 -->
-    <h2>🕍 Day 3: Sunday, Jan 4</h2>
-    <div style="font-size:0.9rem; color:#666; margin-bottom:20px;">Focus: Mattancherry (South) & Departure</div>
-
-    <!-- Stop 1 -->
-    <div class="stop-card type-stay">
-        <div class="card-header">
-            <span class="time-badge">09:00</span>
-        </div>
-        <div class="location-name">🏠 Checkout & Bag Storage</div>
-        <div class="details">Checkout. Request to leave bags at reception till evening.</div>
-    </div>
-
-    <!-- Stop 2 -->
-    <div class="stop-card type-sight">
-        <div class="dist-badge">
-            <span class="dist-icon">🛺</span> 2.5 km (10 min auto) from Stay
-        </div>
-        <div class="card-header">
-            <span class="time-badge">09:30</span>
-        </div>
-        <a href="https://maps.google.com/?q=Mattancherry+Palace" target="_blank" class="location-name">📍 Mattancherry Palace</a>
-        <div class="details">Also known as Dutch Palace. Beautiful murals.</div>
-        <span class="price">Entry: ₹5</span>
-    </div>
-
-    <!-- Stop 3 -->
-    <div class="stop-card type-sight">
-        <div class="dist-badge">
-            <span class="dist-icon">🚶</span> 100m (1 min walk) next door
-        </div>
-        <div class="card-header">
-            <span class="time-badge">10:30</span>
-        </div>
-        <a href="https://maps.google.com/?q=Paradesi+Synagogue" target="_blank" class="location-name">📍 Paradesi Synagogue</a>
-        <div class="details"><strong>Open on Sundays!</strong> See the Chinese tiles and chandeliers.</div>
-        <span class="price">Entry: ₹10</span>
-    </div>
-
-    <!-- Stop 4 -->
-    <div class="stop-card type-sight">
-        <div class="dist-badge">
-            <span class="dist-icon">🚶</span> 50m (Immediate)
-        </div>
-        <div class="card-header">
-            <span class="time-badge">11:30 - 13:00</span>
-        </div>
-        <a href="https://maps.google.com/?q=Jew+Town+Road+Kochi" target="_blank" class="location-name">🛍️ Jew Town & Ginger House</a>
-        <div class="details">Shop for spices/antiques. Have lunch at Ginger House (Waterfront).</div>
-    </div>
-
-    <!-- Stop 5 -->
-    <div class="stop-card type-transit">
-        <div class="dist-badge">
-            <span class="dist-icon">🛺</span> Return to Hotel -> Jetty
-        </div>
-        <div class="card-header">
-            <span class="time-badge">17:00</span>
-        </div>
-        <a href="https://maps.google.com/?q=Fort+Kochi+Ro-Ro+Terminal" target="_blank" class="location-name">📍 Fort Kochi Jetty</a>
-        <div class="details">Pick up bags from Honolulu Home. Go to Jetty. Take ferry to Ernakulam.</div>
-    </div>
-
-    <!-- Stop 6 -->
-    <div class="stop-card type-transit">
-        <div class="dist-badge">
-            <span class="dist-icon">🛺</span> 3.0 km (15 min auto) from Jetty
-        </div>
-        <div class="card-header">
-            <span class="time-badge">19:00</span>
-        </div>
-        <a href="https://maps.google.com/?q=Ernakulam+Junction+Railway+Station" target="_blank" class="location-name">📍 Ernakulam Jn (South)</a>
-        <div class="details">Reach station early. Have light dinner nearby.</div>
-    </div>
-
-    <!-- Train Box -->
-    <div class="train-summary" style="border-left: 5px solid #E76F51; background: #fff3e0;">
-        <div>
-            <div class="train-route">🚂 12977 Marusagar SF Express</div>
-            <div class="details">Ernakulam (ERS) ➡️ Kasaragod (KGQ)</div>
-        </div>
-        <div class="train-time">Departs: 20:25</div>
-    </div>
-
-</div>
-
-<div class="map-legend">
-    <p>Distances are estimates. Traffic in Kochi is moderate.</p>
-</div>
+    <footer>
+        <p>Created with ❤️ for the Girls Trip 2026</p>
+    </footer>
 
 </body>
 </html>
