@@ -3,299 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kochi 2026 | Modern Itinerary</title>
+    <title>Kochi Girls Trip 2026</title>
     
-    <!-- Modern Font: Outfit -->
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --primary: #2563EB; /* Modern Blue */
-            --primary-light: #EFF6FF;
-            --accent: #F97316; /* Vibrant Orange */
-            --bg: #F8FAFC;
-            --surface: #FFFFFF;
-            --text-main: #1E293B;
-            --text-sub: #64748B;
-            --border: #E2E8F0;
-        }
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0F766E', /* Teal 700 */
+                        secondary: '#F59E0B', /* Amber 500 */
+                        surface: '#ffffff',
+                        background: '#F1F5F9', /* Slate 100 */
+                    }
+                }
+            }
         }
-
-        /* Modern Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0F172A, #1E293B);
-            color: white;
-            padding: 60px 20px 40px;
-            text-align: center;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero h1 { margin: 0; font-weight: 700; font-size: 2.5rem; letter-spacing: -1px; }
-        .hero .meta { 
-            display: inline-flex; gap: 15px; margin-top: 15px; 
-            background: rgba(255,255,255,0.1); padding: 8px 16px; 
-            border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px);
-        }
-
-        /* Container */
-        .container { max-width: 700px; margin: 0 auto; padding: 30px 20px; }
-
-        /* Day Headers */
-        .day-header {
-            display: flex; align-items: center; justify-content: space-between;
-            margin-top: 50px; margin-bottom: 20px;
-            position: sticky; top: 10px; z-index: 10;
-        }
-        .day-title {
-            background: var(--text-main); color: white;
-            padding: 8px 20px; border-radius: 50px;
-            font-weight: 600; font-size: 1.1rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-        }
-        .day-date { font-weight: 500; color: var(--text-sub); }
-
-        /* Timeline Layout */
-        .timeline { position: relative; padding-left: 20px; }
-        .timeline::before {
-            content: ''; position: absolute; left: 0; top: 10px; bottom: 0;
-            width: 2px; background: var(--border);
-        }
-
-        /* Cards */
-        .card {
-            background: var(--surface);
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 24px;
-            position: relative;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-            border-color: var(--primary);
-        }
-
-        /* Timeline Dot */
-        .card::after {
-            content: ''; position: absolute; left: -25px; top: 28px;
-            width: 12px; height: 12px; border-radius: 50%;
-            background: var(--primary); border: 4px solid var(--bg);
-        }
-
-        /* Card Content */
-        .card-time { 
-            font-weight: 600; color: var(--accent); font-size: 0.9rem; margin-bottom: 8px; display: block; 
-        }
-        .card-title {
-            margin: 0; font-size: 1.25rem; font-weight: 700; color: var(--text-main);
-            text-decoration: none; display: flex; align-items: center; gap: 8px;
-        }
-        .card-title:hover { color: var(--primary); }
-        .card-meta {
-            display: flex; align-items: center; gap: 15px; margin-top: 12px;
-            font-size: 0.85rem; color: var(--text-sub);
-        }
-        .card-desc { margin-top: 12px; color: #475569; font-size: 0.95rem; }
-
-        /* Badges */
-        .badge {
-            padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 0.75rem;
-        }
-        .badge-dist { background: var(--primary-light); color: var(--primary); }
-        .badge-alert { background: #FEF2F2; color: #DC2626; border: 1px solid #FECACA; display: block; margin-top: 10px; padding: 10px; border-radius: 8px; }
-
-        /* Train Block */
-        .train-block {
-            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
-            border: none; border-left: 5px solid var(--primary);
-        }
-
-        /* Footer */
-        footer { text-align: center; color: var(--text-sub); font-size: 0.85rem; padding-bottom: 40px; }
-
-        /* Mobile Adjustments */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2rem; }
-            .container { padding: 20px 15px; }
-            .card { padding: 18px; }
-        }
-    </style>
+    </script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased pb-20">
 
-    <div class="hero">
-        <h1>Kochi Trip '26</h1>
-        <div class="meta">
-            <span>Jan 2 - Jan 5</span>
-            <span>•</span>
-            <span>4 Friends</span>
-            <span>•</span>
-            <span>No Locker Plan</span>
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-br from-slate-900 to-teal-900 text-white pt-16 pb-12 rounded-b-[2.5rem] shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-12 opacity-10">
+            <i data-lucide="palmtree" class="w-48 h-48"></i>
         </div>
-    </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-medium border border-white/20 mb-4">
+                <i data-lucide="users" class="w-4 h-4"></i>
+                <span>4 Friends</span>
+                <span class="opacity-50">|</span>
+                <span>Jan 2 - 5, 2026</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">Kochi Trip Itinerary</h1>
+            <p class="text-teal-100 opacity-90">Art, Heritage & Sunsets (No Locker Edition)</p>
+        </div>
+    </header>
 
-    <div class="container">
+    <main class="container mx-auto px-4 -mt-8 max-w-3xl">
+
+        <!-- ALERT BOX: LUGGAGE STRATEGY -->
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 shadow-sm mb-8 flex gap-3 items-start">
+            <i data-lucide="briefcase" class="w-5 h-5 text-amber-600 mt-0.5 shrink-0"></i>
+            <div>
+                <h3 class="font-bold text-amber-800 text-sm">Luggage Strategy (No Lockers)</h3>
+                <p class="text-xs text-amber-700 mt-1 leading-relaxed">
+                    <strong>Day 2 Morning:</strong> Carry bags on Ferry → Quick stop at Fishing Nets → Chill at Cafe until 12:00 Check-in.<br>
+                    <strong>Day 3 Morning:</strong> Hire an Auto for the Mattancherry trip and keep bags in the Auto (Negotiate waiting charge).
+                </p>
+            </div>
+        </div>
 
         <!-- DAY 1 -->
-        <div class="day-header">
-            <div class="day-title">Day 1</div>
-            <div class="day-date">Fri, Jan 2</div>
+        <div class="flex items-center gap-4 mb-6 mt-10">
+            <div class="bg-slate-800 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-md">Day 1</div>
+            <div class="h-px bg-slate-300 flex-1"></div>
+            <span class="text-slate-500 text-sm font-medium">Friday, Jan 2</span>
         </div>
 
-        <div class="timeline">
-            <!-- Train Departure -->
-            <div class="card train-block">
-                <span class="card-time">23:50 • DEPARTURE</span>
-                <div class="card-title">🚂 Train 12618: Mangala Lakshadweep</div>
-                <div class="card-desc">
-                    Board at <strong>Nileshwar (NLE)</strong>. <br>
-                    Rest overnight on the train.
+        <!-- Card: Train Departure -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden mb-6 group hover:shadow-md transition-all">
+            <div class="h-1.5 bg-blue-600 w-full"></div>
+            <div class="p-5 flex gap-4">
+                <div class="bg-blue-50 p-3 rounded-xl h-fit">
+                    <i data-lucide="train-front" class="w-6 h-6 text-blue-600"></i>
+                </div>
+                <div>
+                    <div class="text-xs font-bold text-blue-600 mb-1 tracking-wide">DEPARTURE • 23:50</div>
+                    <h3 class="text-lg font-bold text-slate-900">Train 12618: Mangala Lakshadweep</h3>
+                    <p class="text-slate-500 text-sm mt-1">Boarding from <strong>Nileshwar (NLE)</strong></p>
+                    <div class="mt-3 inline-flex items-center gap-1.5 text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">
+                        <i data-lucide="moon" class="w-3 h-3"></i>
+                        Overnight Journey
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- DAY 2 -->
-        <div class="day-header">
-            <div class="day-title">Day 2</div>
-            <div class="day-date">Sat, Jan 3</div>
+        <div class="flex items-center gap-4 mb-6 mt-12">
+            <div class="bg-teal-700 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-md">Day 2</div>
+            <div class="h-px bg-slate-300 flex-1"></div>
+            <span class="text-slate-500 text-sm font-medium">Saturday, Jan 3</span>
         </div>
 
-        <div class="timeline">
-            <!-- Arrival -->
-            <div class="card">
-                <span class="card-time">07:30 • ARRIVAL</span>
-                <a href="https://maps.google.com/?q=Ernakulam+Junction" target="_blank" class="card-title">📍 Ernakulam Jn (South)</a>
-                <div class="badge-alert">🎒 <strong>Luggage Alert:</strong> You have bags until 12:00 PM. No lockers available.</div>
-            </div>
-
-            <!-- Ferry -->
-            <div class="card">
-                <span class="card-time">08:00</span>
-                <a href="https://maps.google.com/?q=Ernakulam+Boat+Jetty" target="_blank" class="card-title">🚤 Ferry to Fort Kochi</a>
-                <div class="card-meta">
-                    <span class="badge badge-dist">3 km from Station (Auto)</span>
-                    <span>₹10 Ticket</span>
+        <div class="relative pl-4 sm:pl-8 border-l-2 border-slate-200 space-y-8">
+            
+            <!-- Item 1 -->
+            <div class="relative">
+                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-teal-700"></i>
                 </div>
-                <div class="card-desc">Take the government ferry. Luggage is allowed and easy to carry on the boat.</div>
-            </div>
-
-            <!-- Slow Breakfast -->
-            <div class="card">
-                <span class="card-time">08:45 - 11:30 • THE "BAG" HOURS</span>
-                <a href="https://maps.google.com/?q=Kashi+Art+Cafe+Fort+Kochi" target="_blank" class="card-title">☕ Slow Breakfast & Chill</a>
-                <div class="card-meta">
-                    <span class="badge badge-dist">🚶 5 min from Ferry</span>
-                </div>
-                <div class="card-desc">
-                    Since you can't drop bags, go to a spacious cafe. 
-                    <br><strong>Recommendation:</strong> <em>Qissa Café</em> (Opens 8:30) or wait for <em>Kashi Art Café</em> (Opens 8:30). 
-                    <br>Relax, have coffee, and take turns walking nearby streets if needed.
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">07:30</span>
+                        <a href="https://maps.google.com/?q=Ernakulam+Junction" target="_blank" class="text-teal-600 hover:text-teal-800">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Arrival & Ferry</h3>
+                    <p class="text-sm text-slate-600">Arrive Ernakulam Jn (South). Auto to Boat Jetty (3km). Take the <strong>Public Ferry (₹6)</strong> to Fort Kochi. Enjoy the morning breeze!</p>
                 </div>
             </div>
 
-            <!-- Check In -->
-            <div class="card" style="border-color: var(--accent);">
-                <span class="card-time">12:00 • CHECK-IN</span>
-                <a href="https://maps.google.com/?q=Honolulu+Home+Fort+Kochi" target="_blank" class="card-title">🏠 Honolulu Home</a>
-                <div class="card-meta">
-                    <span class="badge badge-dist">🛺 5 min Auto from Cafe</span>
+            <!-- Item 2: Chinese Nets -->
+            <div class="relative">
+                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
+                    <i data-lucide="camera" class="w-4 h-4 text-teal-700"></i>
                 </div>
-                <div class="card-desc">
-                    <strong>Finally!</strong> Drop the bags, freshen up, and get ready to explore.
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">08:45</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1 flex items-center gap-2">
+                        Chinese Fishing Nets
+                        <span class="text-[10px] bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded border border-orange-200">Must See</span>
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-2">
+                        The Ferry drops you very close to the nets. Walk there (carry bags, it's short). Take the iconic photos while the morning light is good.
+                    </p>
+                    <a href="https://maps.google.com/?q=Chinese+Fishing+Nets" target="_blank" class="text-sm font-medium text-teal-600 flex items-center gap-1 hover:underline">
+                        <i data-lucide="map" class="w-3 h-3"></i> View on Map
+                    </a>
                 </div>
             </div>
 
-            <!-- Biennale -->
-            <div class="card">
-                <span class="card-time">13:30 - 16:30</span>
-                <a href="https://maps.google.com/?q=Aspinwall+House" target="_blank" class="card-title">🎨 Aspinwall House (Biennale)</a>
-                <div class="card-meta">
-                    <span class="badge badge-dist">🚶 10 min walk</span>
+            <!-- Item 3: Cafe Chill -->
+            <div class="relative">
+                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
+                    <i data-lucide="coffee" class="w-4 h-4 text-teal-700"></i>
                 </div>
-                <div class="card-desc">The main venue of the Art Biennale. Spend the afternoon here.</div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 ring-1 ring-orange-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold bg-orange-50 text-orange-600 px-2 py-1 rounded">09:30 - 12:00</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Slow Breakfast (Bag Station)</h3>
+                    <p class="text-sm text-slate-600">
+                        Since check-in is at 12, head to a spacious cafe. 
+                        <strong>Recommendation:</strong> <em>Kashi Art Cafe</em> (Burgher St). It has space. 
+                        Relax, eat, and take turns walking Princess Street if needed.
+                    </p>
+                </div>
             </div>
 
-            <!-- Evening -->
-            <div class="card">
-                <span class="card-time">17:30 - 20:00</span>
-                <a href="https://maps.google.com/?q=Marine+Drive+Kochi" target="_blank" class="card-title">🌇 Marine Drive Sunset</a>
-                <div class="card-meta">
-                    <span class="badge badge-dist">🚤 Ferry Ride</span>
+            <!-- Item 4: Checkin -->
+            <div class="relative">
+                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-600 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
+                    <i data-lucide="home" class="w-4 h-4 text-white"></i>
                 </div>
-                <div class="card-desc">Ferry to Ernakulam side. See the Rainbow Bridge lights. Dinner at local stalls. Ferry back to sleep.</div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-teal-600">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold bg-teal-50 text-teal-700 px-2 py-1 rounded">12:00</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Check-In</h3>
+                    <p class="text-sm text-slate-600"><strong>Honolulu Home</strong>. Drop the bags finally! Freshen up.</p>
+                </div>
+            </div>
+
+            <!-- Item 5: Biennale -->
+            <div class="relative">
+                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
+                    <i data-lucide="palette" class="w-4 h-4 text-teal-700"></i>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">13:30</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Kochi-Muziris Biennale</h3>
+                    <p class="text-sm text-slate-600">Walk to <strong>Aspinwall House</strong>. Spend the afternoon exploring the art installations.</p>
+                </div>
+            </div>
+
+            <!-- Item 6: Budget Boat Ride -->
+            <div class="relative">
+                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
+                    <i data-lucide="ship" class="w-4 h-4 text-teal-700"></i>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 bg-gradient-to-r from-orange-50 to-white">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold bg-orange-100 text-orange-700 px-2 py-1 rounded">17:30 - Sunset</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1 text-slate-800">Budget Sunset Boat Ride 🌅</h3>
+                    <ul class="text-sm text-slate-600 list-disc ml-4 space-y-1">
+                        <li>Take Public Ferry to Ernakulam Marine Drive.</li>
+                        <li><strong>Option A (Cheapest):</strong> Just enjoy the view from the ferry (₹6).</li>
+                        <li><strong>Option B (Recommended):</strong> KSINC Tourist Boat from Marine Drive (~₹150/person).</li>
+                        <li>See the <strong>Rainbow Bridge</strong> lights at Marine Drive.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <!-- DAY 3 -->
-        <div class="day-header">
-            <div class="day-title">Day 3</div>
-            <div class="day-date">Sun, Jan 4</div>
+        <div class="flex items-center gap-4 mb-6 mt-12">
+            <div class="bg-teal-700 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-md">Day 3</div>
+            <div class="h-px bg-slate-300 flex-1"></div>
+            <span class="text-slate-500 text-sm font-medium">Sunday, Jan 4</span>
         </div>
 
-        <div class="timeline">
-            <!-- Checkout -->
-            <div class="card">
-                <span class="card-time">09:00 • CHECK-OUT</span>
-                <div class="card-title">🎒 Carry Bags / Auto Strategy</div>
-                <div class="card-desc">
-                    Check out. Since there are no lockers, hire an Auto to take you to Mattancherry and keep bags in the Auto while you visit (negotiate "Waiting Charge").
-                    <br><em>Or verify if Honolulu Home allows bag storage until evening (most do, even if no early check-in).</em>
+        <div class="relative pl-4 sm:pl-8 border-l-2 border-slate-200 space-y-8">
+            
+            <!-- Item 1: Auto Hire -->
+            <div class="relative">
+                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
+                    <i data-lucide="backpack" class="w-4 h-4 text-teal-700"></i>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">09:00</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Checkout & Auto Strategy</h3>
+                    <p class="text-sm text-slate-600">
+                        Check out. Hire an Auto Rickshaw for 3-4 hours. 
+                        <strong>Load bags into the auto.</strong> The driver waits while you visit spots.
+                        <span class="block mt-1 text-xs text-slate-500 italic">(Negotiate total fare approx ₹400-600 for the trip including waiting).</span>
+                    </p>
                 </div>
             </div>
 
-            <!-- Mattancherry -->
-            <div class="card">
-                <span class="card-time">09:30 - 11:30</span>
-                <a href="https://maps.google.com/?q=Mattancherry+Palace" target="_blank" class="card-title">🏛️ Palace & Synagogue</a>
-                <div class="card-meta">
-                    <span class="badge badge-dist">🛺 2.5 km from Fort Kochi</span>
+            <!-- Item 2: Mattancherry -->
+            <div class="relative">
+                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
+                    <i data-lucide="landmark" class="w-4 h-4 text-teal-700"></i>
                 </div>
-                <div class="card-desc">
-                    <strong>Dutch Palace</strong> + <strong>Paradesi Synagogue</strong>. Both are OPEN today (Sunday).
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">09:30 - 11:30</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Mattancherry (Open Sunday)</h3>
+                    <p class="text-sm text-slate-600 mb-2">
+                        1. <strong>Mattancherry Palace</strong> (Dutch Palace).<br>
+                        2. <strong>Paradesi Synagogue</strong> (Open today!).<br>
+                        3. <strong>Jew Town</strong> Shopping (Spices/Antiques).
+                    </p>
+                    <div class="inline-flex items-center gap-1 text-xs text-teal-600 bg-teal-50 px-2 py-1 rounded">
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> 2.5km from Fort Kochi
+                    </div>
                 </div>
             </div>
 
-            <!-- Lunch -->
-            <div class="card">
-                <span class="card-time">12:00</span>
-                <a href="https://maps.google.com/?q=Ginger+House+Museum+Hotel" target="_blank" class="card-title">🥘 Ginger House / Jew Town</a>
-                <div class="card-desc">Lunch by the waterfront. Shop for spices in Jew Town.</div>
+            <!-- Item 3: Lunch -->
+            <div class="relative">
+                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-100 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
+                    <i data-lucide="utensils" class="w-4 h-4 text-teal-700"></i>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">12:30</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Lunch with a View</h3>
+                    <p class="text-sm text-slate-600">
+                        Try <strong>Ginger House Museum Hotel</strong> (Waterfront) in Jew Town. 
+                        After lunch, take the auto/ferry back towards Ernakulam.
+                    </p>
+                </div>
             </div>
 
-            <!-- Train Return -->
-            <div class="card train-block">
-                <span class="card-time">20:25 • RETURN</span>
-                <div class="card-title">🚂 Train 12977: Marusagar SF</div>
-                <div class="card-meta">
-                    <span class="badge badge-dist">From Ernakulam Jn (ERS)</span>
+             <!-- Card: Train Return -->
+            <div class="relative">
+                <div class="absolute -left-[25px] sm:-left-[41px] top-0 bg-teal-600 border-4 border-white w-8 h-8 rounded-full flex items-center justify-center">
+                    <i data-lucide="train-front" class="w-4 h-4 text-white"></i>
                 </div>
-                <div class="card-desc">
-                    Head to station by 19:00 to be safe.
-                    <br><strong>Arrival Kasaragod (KGQ):</strong> 02:49 AM (Monday)
+                <div class="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-teal-600 group">
+                    <div class="h-1.5 w-full"></div>
+                    <div class="flex gap-4">
+                        <div>
+                            <div class="text-xs font-bold text-teal-600 mb-1 tracking-wide">RETURN • 20:25</div>
+                            <h3 class="text-lg font-bold text-slate-900">Train 12977: Marusagar SF</h3>
+                            <p class="text-slate-500 text-sm mt-1">Departs <strong>Ernakulam Jn (ERS)</strong></p>
+                            <p class="text-slate-500 text-sm">Arrives Kasaragod: <strong>02:49 AM</strong> (Mon)</p>
+                            <div class="mt-3 text-sm text-orange-600 font-medium bg-orange-50 p-2 rounded">
+                                ⚠️ Reach station by 19:30. Have light dinner nearby.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-    </div>
+    </main>
 
-    <footer>
-        <p>Created with ❤️ for the Girls Trip 2026</p>
+    <footer class="text-center text-slate-400 text-sm py-12">
+        <p>Created for the Girls Trip 🌴 Jan 2026</p>
     </footer>
 
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
