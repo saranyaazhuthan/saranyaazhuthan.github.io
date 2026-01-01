@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochi Trip: Jan 2-5, 2026</title>
+    <style>
+        :root {
+            --primary: #2A9D8F; /* Teal */
+            --secondary: #E9C46A; /* Sand */
+            --accent: #E76F51; /* Burnt Orange */
+            --dark: #264653;
+            --light: #F8F9FA;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(rgba(38, 70, 83, 0.9), rgba(38, 70, 83, 0.8)), url('https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        h1 { margin: 0; font-size: 2.2rem; letter-spacing: 1px; }
+        .subtitle { font-size: 1.1rem; margin-top: 10px; color: var(--secondary); }
+        .badge { background: var(--accent); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; margin-top: 15px; }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Sections */
+        section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        h2 { color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 8px; margin-top: 0; font-size: 1.5rem; }
+        h3 { color: var(--dark); margin-top: 20px; margin-bottom: 10px; font-size: 1.1rem; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.9rem; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background-color: rgba(42, 157, 143, 0.1); color: var(--dark); font-weight: bold; }
+        tr:last-child td { border-bottom: none; }
+        
+        /* Train Box */
+        .train-box {
+            background: #e8f4f8;
+            border-left: 5px solid #2196F3;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .train-number { font-size: 1.2rem; font-weight: bold; color: #1565C0; }
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 15px;
+            border-left: 3px solid var(--secondary);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+        .time { font-weight: bold; color: var(--accent); display: block; font-size: 0.9rem; }
+        .activity { font-weight: 600; display: block; }
+        .details { font-size: 0.85rem; color: #555; }
+
+        /* Biennale Box */
+        .biennale-box {
+            background: linear-gradient(135deg, #2A9D8F 0%, #264653 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .biennale-box h2 { border: none; color: white; }
+        .biennale-box a { color: var(--secondary); font-weight: bold; }
+
+        /* Alert Box */
+        .alert-box {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.8rem;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .container { padding: 15px; }
+            th, td { padding: 8px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🌴 Kochi Girls Trip</h1>
+        <div class="subtitle">Jan 2-5, 2026 | 4 Friends</div>
+        <div class="badge">Budget: ₹1,000 - ₹1,450 / person</div>
+    </header>
+
+    <div class="container">
+
+        <!-- ALERT -->
+        <div class="alert-box">
+            <strong>🗓️ Schedule Check:</strong>
+            <ul style="margin: 5px 0 0 20px; padding: 0;">
+                <li><strong>Day 2 (Sat, Jan 3):</strong> Synagogue is closed. We visit <strong>Fort Kochi & Biennale</strong>.</li>
+                <li><strong>Day 3 (Sun, Jan 4):</strong> Synagogue & Palace are <strong>OPEN</strong>. We visit <strong>Mattancherry</strong> today.</li>
+            </ul>
+        </div>
+
+        <!-- TRAIN DETAILS -->
+        <section>
+            <h2>🚂 Travel Details</h2>
+            
+            <div class="train-box">
+                <div><strong>ONWARD Journey (Jan 2 Night)</strong></div>
+                <div class="train-number">12618 Mangala Lakshadweep</div>
+                <div>Dep: Nileshwar (NLE) @ 23:50</div>
+                <div>Arr: Ernakulam Jn (ERS) @ 07:30 (Jan 3)</div>
+            </div>
+
+            <div class="train-box" style="border-left-color: #4CAF50; background: #e8f5e9;">
+                <div><strong>RETURN Journey (Jan 4 Night) - BOOKED ✅</strong></div>
+                <div class="train-number">12977 Marusagar SF Express</div>
+                <div>Dep: <strong>Ernakulam Jn (ERS) @ 20:25</strong> (Sunday)</div>
+                <div>Arr: <strong>Kasaragod (KGQ) @ 02:49</strong> (Monday)</div>
+            </div>
+        </section>
+
+        <!-- DAY 2 -->
+        <section>
+            <h2>🌅 Day 2: Jan 3 (Saturday)</h2>
+            <h3>Fort Kochi & Biennale</h3>
+            
+            <div class="timeline-item">
+                <span class="time">07:30 - 08:30</span>
+                <span class="activity">Arrive ERS & Ferry</span>
+                <span class="details">Walk to Jetty. Take ₹10 Ferry to Fort Kochi. Beautiful morning views!</span>
+            </div>
+            
+            <div class="timeline-item">
+                <span class="time">08:30 - 10:00</span>
+                <span class="activity">Breakfast & Bags</span>
+                <span class="details">Eat at <strong>Samridhi Hotel</strong> (Budget) or a cafe. Drop bags at Hotel/Cloakroom.</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="time">10:00 - 12:30</span>
+                <span class="activity">📸 Fort Kochi Classics</span>
+                <span class="details">Chinese Fishing Nets, St. Francis Church, Santa Cruz Basilica.</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="time">12:30 - 14:00</span>
+                <span class="activity">Check-in & Lunch</span>
+                <span class="details">Check into Honolulu Home. Freshen up. Lunch at a local spot.</span>
+            </div>
+
+            <div class="biennale-box">
+                <h2>🎨 Afternoon: Art Attack</h2>
+                <p><strong>Venue: Aspinwall House & Pepper House</strong></p>
+                <p>Explore the main venues of the Kochi-Muziris Biennale.</p>
+                <p style="font-size:0.9rem"><em>Entry: ~₹150 | Time: 2-3 Hours</em></p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="time">17:30 - 19:00</span>
+                <span class="activity">Sunset & Marine Drive</span>
+                <span class="details">Take ferry to Ernakulam. Walk Marine Drive (Rainbow Bridge). Sunset boat ride (optional).</span>
+            </div>
+            
+            <div class="timeline-item">
+                <span class="time">20:00</span>
+                <span class="activity">Dinner & Ferry Back</span>
+                <span class="details">Dinner at Marine Drive food stalls. Ferry back to Fort Kochi for sleep.</span>
+            </div>
+        </section>
+
+        <!-- DAY 3 -->
+        <section>
+            <h2>🕍 Day 3: Jan 4 (Sunday)</h2>
+            <h3>Mattancherry & Departure</h3>
+            <p style="font-size:0.9rem; color:#d32f2f;"><em>*Note: Synagogue is OPEN today (Closed Fri/Sat).</em></p>
+
+            <div class="timeline-item">
+                <span class="time">08:00 - 09:00</span>
+                <span class="activity">Checkout & Breakfast</span>
+                <span class="details">Carry bags or ask hotel to keep them till evening.</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="time">09:30 - 11:00</span>
+                <span class="activity">🏛️ Mattancherry Palace</span>
+                <span class="details">"Dutch Palace". Famous murals. <strong>Open on Sundays.</strong> (₹5 entry).</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="time">11:00 - 12:30</span>
+                <span class="activity">🕍 Paradesi Synagogue</span>
+                <span class="details">Check the interiors (No shoes/photos inside). Walk through Jew Town spice shops.</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="time">13:00 - 14:30</span>
+                <span class="activity">Lunch @ Cafe</span>
+                <span class="details">Try <strong>Ginger House</strong> (Great waterfront view) or Kayees (Biryani).</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="time">14:30 - 16:30</span>
+                <span class="activity">Last of Fort Kochi</span>
+                <span class="details">Street Art walk in Fort Kochi or finish any missed Biennale spots. Pick up bags.</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="time">17:00 - 18:00</span>
+                <span class="activity">Ferry to Ernakulam</span>
+                <span class="details">Head to the station side early. Ferry is safer than traffic!</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="time">19:00</span>
+                <span class="activity">Dinner near Station</span>
+                <span class="details">Light dinner near Ernakulam South (Junction).</span>
+            </div>
+
+            <div class="train-box" style="background:#fff3e0; border-left-color: #ff9800; margin-top:15px;">
+                <div class="time">20:25 - DEPARTURE 🚂</div>
+                <div class="details">Board <strong>12977 Marusagar SF Express</strong> from Ernakulam Jn (ERS).</div>
+            </div>
+        </section>
+
+        <!-- BUDGET -->
+        <section>
+            <h2>💰 Estimated Costs</h2>
+            <table>
+                <tr><td>Train (Return)</td><td>(Already Booked)</td></tr>
+                <tr><td>Ferries & Auto</td><td>₹100</td></tr>
+                <tr><td>Entry Fees (Biennale + Heritage)</td><td>₹165</td></tr>
+                <tr><td>Food & Cafes (2 Days)</td><td>₹700</td></tr>
+                <tr><td><strong>TOTAL (Pocket Money)</strong></td><td><strong>~₹1,000</strong></td></tr>
+            </table>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Trip ready! Created for Jan 2026.<br>Safe travels! 🚂✨</p>
+    </footer>
+
+</body>
+</html>
